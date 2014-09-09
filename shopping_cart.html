@@ -18,28 +18,26 @@
     </div>
     <br/>
     <div ng-repeat='item in items' class="container">
-      <div class="row, form-group">
-        <div class="col-md-2">
-          <span class="spinner, input-group">
-            <input type="number" name="name" class="form-control" ng-model="item.quantity" min="0" max="99" required>
-            <span class="input-group-btn-vertical">
-              <button class="btn btn-default" ng-click="item.quantity = item.quantity + 1"><i class="fa fa-caret-up"></i></button>
-              <button class="btn btn-default" ng-click="item.quantity = item.quantity - 1"><i class="fa fa-caret-down"></i></button>
-            </span>
+      <div class="col-md-3">
+        <span class="input-group">
+          <input type="number" name="input" class="form-control" ng-model="item.quantity" min="0" max="99" required>
+          <span class="input-group-btn-vertical">
+            <button class="btn btn-default" ng-click="item.quantity = item.quantity + 1"><i class="fa fa-caret-up"></i></button>
+            <button class="btn btn-default" ng-click="item.quantity = item.quantity - 1"><i class="fa fa-caret-down"></i></button>
           </span>
-        </div>
-        <div class="col-md-7" style="margin-top: 5px">
-          {{item.title}}
-        </div>
-        <div class="col-md-2" style="margin-top: 5px">
-          {{item.price * item.quantity | currency}}
-        </div>
-        <div class="col-md-1" style="margin-top: 5px">
-          <button ng-click='remove($index)'><i class="fa fa-times"></i></button>
-        </div>
-        <br/><br/><br/>
+        </span>
+      </div>
+      <div class="col-md-6" style="margin-top: 5px">
+        {{item.title}}
+      </div>
+      <div class="col-md-2" style="margin-top: 5px">
+        {{item.price * item.quantity | currency}}
+      </div>
+      <div class="col-md-1" style="margin-top: 5px">
+        <button ng-click='remove($index)'><i class="fa fa-times"></i></button>
       </div>
     </div>
+    <br/><br/>
     <div class="container">
       <div class="col-md-2">
         <img ng-src="img/shopping-total.png">
